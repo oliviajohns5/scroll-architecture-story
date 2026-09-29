@@ -16,7 +16,8 @@
         "#ad6b32",
         "#e7b76f"
       ],
-      "image_prompt": "museum-quality cinematic painted realism, natural light, richly drawn architectural materials, subtle film grain, atmospheric depth, elegant editorial composition, no text, no logos, no watermark, no UI, made for a premium scroll-driven story website. Scene: The First Wall (Lascaux, France, c. 17,000 BCE). Focus on painted bison, mineral pigment, cave wall. Narrative mood: Before cities, before columns, before kings carved their names into stone, people entered caves and covered darkness with animals, motion, and memory. The wall became a stage, and the image became a way to keep a world alive after the hunt had passed. Wide 16:9 composition with clear negative space for overlaid chapter text."
+      "image_prompt": "museum-quality cinematic painted realism, natural light, richly drawn architectural materials, subtle film grain, atmospheric depth, elegant editorial composition, no text, no logos, no watermark, no UI, made for a premium scroll-driven story website. Scene: The First Wall (Lascaux, France, c. 17,000 BCE). Focus on painted bison, mineral pigment, cave wall. Narrative mood: Before cities, before columns, before kings carved their names into stone, people entered caves and covered darkness with animals, motion, and memory. The wall became a stage, and the image became a way to keep a world alive after the hunt had passed. Wide 16:9 composition with clear negative space for overlaid chapter text.",
+      "image": "/assets/generated/cave-desktop.jpg"
     },
     {
       "id": "parthenon",
@@ -32,7 +33,8 @@
         "#d8c7a3",
         "#f4e9d0"
       ],
-      "image_prompt": "museum-quality cinematic painted realism, natural light, richly drawn architectural materials, subtle film grain, atmospheric depth, elegant editorial composition, no text, no logos, no watermark, no UI, made for a premium scroll-driven story website. Scene: The Measured Temple (Athens, Greece, 447\u2013432 BCE). Focus on Doric columns, pediment, marble frieze. Narrative mood: Classical architecture turned belief into proportion. The Parthenon did not simply stand on the Acropolis; it corrected the eye with subtle curves, slight tilts, and sculpted rhythm, making stone feel almost alive. Wide 16:9 composition with clear negative space for overlaid chapter text."
+      "image_prompt": "museum-quality cinematic painted realism, natural light, richly drawn architectural materials, subtle film grain, atmospheric depth, elegant editorial composition, no text, no logos, no watermark, no UI, made for a premium scroll-driven story website. Scene: The Measured Temple (Athens, Greece, 447\u2013432 BCE). Focus on Doric columns, pediment, marble frieze. Narrative mood: Classical architecture turned belief into proportion. The Parthenon did not simply stand on the Acropolis; it corrected the eye with subtle curves, slight tilts, and sculpted rhythm, making stone feel almost alive. Wide 16:9 composition with clear negative space for overlaid chapter text.",
+      "image": "/assets/generated/parthenon-desktop.jpg"
     },
     {
       "id": "pantheon",
@@ -48,7 +50,8 @@
         "#8f7a60",
         "#ffe0a3"
       ],
-      "image_prompt": "museum-quality cinematic painted realism, natural light, richly drawn architectural materials, subtle film grain, atmospheric depth, elegant editorial composition, no text, no logos, no watermark, no UI, made for a premium scroll-driven story website. Scene: The Hole in the Sky (Rome, Italy, c. 126 CE). Focus on oculus, coffers, circular light. Narrative mood: The Pantheon gathers the world beneath a perfect dome and opens it with an oculus. Sunlight enters like a moving hand, crossing stone by the hour and reminding every visitor that architecture can measure time without a clock. Wide 16:9 composition with clear negative space for overlaid chapter text."
+      "image_prompt": "museum-quality cinematic painted realism, natural light, richly drawn architectural materials, subtle film grain, atmospheric depth, elegant editorial composition, no text, no logos, no watermark, no UI, made for a premium scroll-driven story website. Scene: The Hole in the Sky (Rome, Italy, c. 126 CE). Focus on oculus, coffers, circular light. Narrative mood: The Pantheon gathers the world beneath a perfect dome and opens it with an oculus. Sunlight enters like a moving hand, crossing stone by the hour and reminding every visitor that architecture can measure time without a clock. Wide 16:9 composition with clear negative space for overlaid chapter text.",
+      "image": "/assets/generated/pantheon-desktop.jpg"
     },
     {
       "id": "hagia",
@@ -64,7 +67,8 @@
         "#c89b3c",
         "#f6df9c"
       ],
-      "image_prompt": "museum-quality cinematic painted realism, natural light, richly drawn architectural materials, subtle film grain, atmospheric depth, elegant editorial composition, no text, no logos, no watermark, no UI, made for a premium scroll-driven story website. Scene: The Floating Dome (Constantinople / Istanbul, 537 CE). Focus on pendentives, gold mosaic, suspended dome. Narrative mood: Hagia Sophia made mass feel weightless. Its dome seems to hover on light, gold, and geometry, turning engineering into awe. For centuries it taught builders that structure could become atmosphere. Wide 16:9 composition with clear negative space for overlaid chapter text."
+      "image_prompt": "museum-quality cinematic painted realism, natural light, richly drawn architectural materials, subtle film grain, atmospheric depth, elegant editorial composition, no text, no logos, no watermark, no UI, made for a premium scroll-driven story website. Scene: The Floating Dome (Constantinople / Istanbul, 537 CE). Focus on pendentives, gold mosaic, suspended dome. Narrative mood: Hagia Sophia made mass feel weightless. Its dome seems to hover on light, gold, and geometry, turning engineering into awe. For centuries it taught builders that structure could become atmosphere. Wide 16:9 composition with clear negative space for overlaid chapter text.",
+      "image": "/assets/generated/hagia-desktop.jpg"
     },
     {
       "id": "david",
@@ -80,7 +84,8 @@
         "#d7d0c7",
         "#ffffff"
       ],
-      "image_prompt": "museum-quality cinematic painted realism, natural light, richly drawn architectural materials, subtle film grain, atmospheric depth, elegant editorial composition, no text, no logos, no watermark, no UI, made for a premium scroll-driven story website. Scene: The Body Before Action (Florence, Italy, 1501\u20131504). Focus on marble figure, contrapposto, tension. Narrative mood: Michelangelo\u2019s David is not shown in victory. He is shown in the instant before decision: marble tightened into attention, hand enlarged by purpose, gaze fixed on a future still invisible to us. Wide 16:9 composition with clear negative space for overlaid chapter text."
+      "image_prompt": "museum-quality cinematic painted realism, natural light, richly drawn architectural materials, subtle film grain, atmospheric depth, elegant editorial composition, no text, no logos, no watermark, no UI, made for a premium scroll-driven story website. Scene: The Body Before Action (Florence, Italy, 1501\u20131504). Focus on marble figure, contrapposto, tension. Narrative mood: Michelangelo\u2019s David is not shown in victory. He is shown in the instant before decision: marble tightened into attention, hand enlarged by purpose, gaze fixed on a future still invisible to us. Wide 16:9 composition with clear negative space for overlaid chapter text.",
+      "image": "/assets/generated/david-desktop.jpg"
     },
     {
       "id": "taj",
@@ -96,7 +101,8 @@
         "#dfe7e5",
         "#8ab5bd"
       ],
-      "image_prompt": "museum-quality cinematic painted realism, natural light, richly drawn architectural materials, subtle film grain, atmospheric depth, elegant editorial composition, no text, no logos, no watermark, no UI, made for a premium scroll-driven story website. Scene: Symmetry and Grief (Agra, India, 1632\u20131653). Focus on white marble mausoleum, reflecting pool. Narrative mood: The Taj Mahal transforms mourning into balance. Marble, garden, water, calligraphy, and reflected sky form an architecture of devotion where grief is given proportion and light. Wide 16:9 composition with clear negative space for overlaid chapter text."
+      "image_prompt": "museum-quality cinematic painted realism, natural light, richly drawn architectural materials, subtle film grain, atmospheric depth, elegant editorial composition, no text, no logos, no watermark, no UI, made for a premium scroll-driven story website. Scene: Symmetry and Grief (Agra, India, 1632\u20131653). Focus on white marble mausoleum, reflecting pool. Narrative mood: The Taj Mahal transforms mourning into balance. Marble, garden, water, calligraphy, and reflected sky form an architecture of devotion where grief is given proportion and light. Wide 16:9 composition with clear negative space for overlaid chapter text.",
+      "image": "/assets/generated/taj-desktop.jpg"
     },
     {
       "id": "bauhaus",
@@ -112,7 +118,8 @@
         "#e9e5d8",
         "#e94135"
       ],
-      "image_prompt": "museum-quality cinematic painted realism, natural light, richly drawn architectural materials, subtle film grain, atmospheric depth, elegant editorial composition, no text, no logos, no watermark, no UI, made for a premium scroll-driven story website. Scene: The Workshop Window (Germany, 1919\u20131933). Focus on glass curtain wall, grid, workshop. Narrative mood: The Bauhaus replaced ornament with systems, workshops, and clarity. Glass, steel, typography, and furniture became part of one design language: useful, repeatable, and modern enough to remake daily life. Wide 16:9 composition with clear negative space for overlaid chapter text."
+      "image_prompt": "museum-quality cinematic painted realism, natural light, richly drawn architectural materials, subtle film grain, atmospheric depth, elegant editorial composition, no text, no logos, no watermark, no UI, made for a premium scroll-driven story website. Scene: The Workshop Window (Germany, 1919\u20131933). Focus on glass curtain wall, grid, workshop. Narrative mood: The Bauhaus replaced ornament with systems, workshops, and clarity. Glass, steel, typography, and furniture became part of one design language: useful, repeatable, and modern enough to remake daily life. Wide 16:9 composition with clear negative space for overlaid chapter text.",
+      "image": "/assets/generated/bauhaus-desktop.jpg"
     },
     {
       "id": "fallingwater",
@@ -128,7 +135,8 @@
         "#6f8a58",
         "#d6c29a"
       ],
-      "image_prompt": "museum-quality cinematic painted realism, natural light, richly drawn architectural materials, subtle film grain, atmospheric depth, elegant editorial composition, no text, no logos, no watermark, no UI, made for a premium scroll-driven story website. Scene: The House Over the Stream (Pennsylvania, USA, 1935\u20131939). Focus on cantilevered terraces, waterfall, forest. Narrative mood: Fallingwater does not sit beside nature; it negotiates with it. Concrete planes reach over running water, stone rises from the site, and the home becomes a bridge between shelter and landscape. Wide 16:9 composition with clear negative space for overlaid chapter text."
+      "image_prompt": "museum-quality cinematic painted realism, natural light, richly drawn architectural materials, subtle film grain, atmospheric depth, elegant editorial composition, no text, no logos, no watermark, no UI, made for a premium scroll-driven story website. Scene: The House Over the Stream (Pennsylvania, USA, 1935\u20131939). Focus on cantilevered terraces, waterfall, forest. Narrative mood: Fallingwater does not sit beside nature; it negotiates with it. Concrete planes reach over running water, stone rises from the site, and the home becomes a bridge between shelter and landscape. Wide 16:9 composition with clear negative space for overlaid chapter text.",
+      "image": "/assets/generated/fallingwater-desktop.jpg"
     }
   ]
 }
