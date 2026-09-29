@@ -22,10 +22,58 @@ const sceneSvg = (ch, i) => {
   return `<svg viewBox="0 0 1200 760" role="img"><title>${ch.title}</title>${common}<path d="M0 640 C220 580 300 700 470 625 C640 545 780 605 1200 520 V760 H0Z" fill="${a}"/><g fill="url(#g${i})"><rect x="310" y="270" width="590" height="44"/><rect x="390" y="360" width="560" height="44"/><rect x="470" y="450" width="440" height="44"/></g><path d="M540 494 C520 570 460 600 360 650" stroke="${c}" stroke-width="9" fill="none"/><path d="M650 494 C690 570 760 600 860 660" stroke="${c}" stroke-width="9" fill="none"/><path d="M190 700 C450 590 760 745 1040 600" stroke="${b}" stroke-width="12" fill="none" opacity=".7"/></svg>`;
 };
 
+const stageWrap = document.querySelector('.stage-wrap');
+
 chapters.forEach((ch,i)=>{
-  const a=document.createElement('a'); a.href=`#${ch.id}`; a.textContent=String(i+1).padStart(2,'0'); nav.appendChild(a);
-  const panel=document.createElement('section'); panel.id=ch.id; panel.className='chapter-anchor chapter-panel'; panel.dataset.index=i+1; panel.style.cssText='height:100svh; position:relative; pointer-events:none;'; document.querySelector('.stage-wrap').appendChild(panel);
+  const a=document.createElement('a');
+  a.href=`#${ch.id}`;
+  a.dataset.chapterIndex = String(i);
+  a.textContent=String(i+1).padStart(2,'0');
+  nav.appendChild(a);
+  const panel=document.createElement('section');
+  panel.id=ch.id;
+  panel.className='chapter-anchor chapter-panel';
+  panel.dataset.index=i+1;
+  panel.style.cssText='height:100svh; position:relative; pointer-events:none;';
+  stageWrap.appendChild(panel);
   const staticCard=document.createElement('article'); staticCard.className='static-card'; staticCard.innerHTML=`<p class="eyebrow">${ch.kicker} · ${ch.period}</p><h2>${ch.title}</h2><p class="meta">${ch.place}</p><p>${ch.text}</p>`; staticStory.appendChild(staticCard);
+});
+
+function chapterScrollY(index){
+  const scrollable = Math.max(1, stageWrap.offsetHeight - innerHeight);
+  // Use the middle of each chapter's scroll segment instead of native anchors.
+  // Native #anchors inside a sticky scroll section can land on the boundary and
+  // skip chapter 1 in Firefox/desktop after smooth scrolling.
+  const segmentProgress = (index + 0.12) / chapters.length;
+  return Math.round(stageWrap.offsetTop + scrollable * segmentProgress);
+}
+
+function goToChapter(index, behavior='smooth'){
+  const safeIndex = Math.max(0, Math.min(chapters.length - 1, Number(index) || 0));
+  history.replaceState(null, '', `#${chapters[safeIndex].id}`);
+  window.scrollTo({ top: chapterScrollY(safeIndex), behavior });
+}
+
+function goToIntro(behavior='smooth'){
+  history.replaceState(null, '', '#intro');
+  window.scrollTo({ top: 0, behavior });
+}
+
+nav.addEventListener('click', (event) => {
+  const link = event.target.closest('a[data-chapter-index]');
+  if(!link) return;
+  event.preventDefault();
+  goToChapter(Number(link.dataset.chapterIndex));
+});
+
+document.querySelector('.start')?.addEventListener('click', (event) => {
+  event.preventDefault();
+  goToChapter(0);
+});
+
+document.querySelector('.brand')?.addEventListener('click', (event) => {
+  event.preventDefault();
+  goToIntro();
 });
 
 function renderChapter(i){
@@ -45,7 +93,7 @@ function update(){
   const max=document.documentElement.scrollHeight-innerHeight;
   const total=max?scrollY/max:0;
   document.documentElement.style.setProperty('--progress', total.toFixed(4));
-  const wrap=document.querySelector('.stage-wrap');
+  const wrap=stageWrap;
   const rect=wrap.getBoundingClientRect();
   const scrollable=wrap.offsetHeight-innerHeight;
   const local=Math.min(1,Math.max(0,-rect.top/scrollable));
@@ -61,4 +109,11 @@ function update(){
 }
 addEventListener('scroll',()=>requestAnimationFrame(update),{passive:true});
 addEventListener('resize',update);
-renderChapter(0); update();
+renderChapter(0);
+update();
+
+const hashIndex = chapters.findIndex(ch => `#${ch.id}` === location.hash);
+if(hashIndex >= 0){
+  // Normalize direct loads such as /#cave to the stable scroll segment.
+  requestAnimationFrame(() => goToChapter(hashIndex, 'auto'));
+}
