@@ -1,0 +1,10 @@
+{
+  "name": "scroll-architecture-story",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "verify": "python3 scripts/verify_project.py .",
+    "serve": "python3 -m http.server 8080"
+  },
+  "devDependencies": {}
+}

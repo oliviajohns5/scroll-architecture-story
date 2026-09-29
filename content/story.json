@@ -1,0 +1,126 @@
+{
+  "title": "The Memory Palace of Stone and Light",
+  "subtitle": "A scroll-driven journey through architecture, sculpture, and the human wish to outlast time.",
+  "chapters": [
+    {
+      "id": "cave",
+      "kicker": "Room I",
+      "title": "The First Wall",
+      "period": "c. 17,000 BCE",
+      "place": "Lascaux, France",
+      "text": "Before cities, before columns, before kings carved their names into stone, people entered caves and covered darkness with animals, motion, and memory. The wall became a stage, and the image became a way to keep a world alive after the hunt had passed.",
+      "focus": "painted bison, mineral pigment, cave wall",
+      "side": "left",
+      "palette": [
+        "#1d1410",
+        "#ad6b32",
+        "#e7b76f"
+      ]
+    },
+    {
+      "id": "parthenon",
+      "kicker": "Room II",
+      "title": "The Measured Temple",
+      "period": "447\u2013432 BCE",
+      "place": "Athens, Greece",
+      "text": "Classical architecture turned belief into proportion. The Parthenon did not simply stand on the Acropolis; it corrected the eye with subtle curves, slight tilts, and sculpted rhythm, making stone feel almost alive.",
+      "focus": "Doric columns, pediment, marble frieze",
+      "side": "right",
+      "palette": [
+        "#1c2430",
+        "#d8c7a3",
+        "#f4e9d0"
+      ]
+    },
+    {
+      "id": "pantheon",
+      "kicker": "Room III",
+      "title": "The Hole in the Sky",
+      "period": "c. 126 CE",
+      "place": "Rome, Italy",
+      "text": "The Pantheon gathers the world beneath a perfect dome and opens it with an oculus. Sunlight enters like a moving hand, crossing stone by the hour and reminding every visitor that architecture can measure time without a clock.",
+      "focus": "oculus, coffers, circular light",
+      "side": "bottom",
+      "palette": [
+        "#17191f",
+        "#8f7a60",
+        "#ffe0a3"
+      ]
+    },
+    {
+      "id": "hagia",
+      "kicker": "Room IV",
+      "title": "The Floating Dome",
+      "period": "537 CE",
+      "place": "Constantinople / Istanbul",
+      "text": "Hagia Sophia made mass feel weightless. Its dome seems to hover on light, gold, and geometry, turning engineering into awe. For centuries it taught builders that structure could become atmosphere.",
+      "focus": "pendentives, gold mosaic, suspended dome",
+      "side": "left",
+      "palette": [
+        "#17121d",
+        "#c89b3c",
+        "#f6df9c"
+      ]
+    },
+    {
+      "id": "david",
+      "kicker": "Room V",
+      "title": "The Body Before Action",
+      "period": "1501\u20131504",
+      "place": "Florence, Italy",
+      "text": "Michelangelo\u2019s David is not shown in victory. He is shown in the instant before decision: marble tightened into attention, hand enlarged by purpose, gaze fixed on a future still invisible to us.",
+      "focus": "marble figure, contrapposto, tension",
+      "side": "right",
+      "palette": [
+        "#111318",
+        "#d7d0c7",
+        "#ffffff"
+      ]
+    },
+    {
+      "id": "taj",
+      "kicker": "Room VI",
+      "title": "Symmetry and Grief",
+      "period": "1632\u20131653",
+      "place": "Agra, India",
+      "text": "The Taj Mahal transforms mourning into balance. Marble, garden, water, calligraphy, and reflected sky form an architecture of devotion where grief is given proportion and light.",
+      "focus": "white marble mausoleum, reflecting pool",
+      "side": "left",
+      "palette": [
+        "#101923",
+        "#dfe7e5",
+        "#8ab5bd"
+      ]
+    },
+    {
+      "id": "bauhaus",
+      "kicker": "Room VII",
+      "title": "The Workshop Window",
+      "period": "1919\u20131933",
+      "place": "Germany",
+      "text": "The Bauhaus replaced ornament with systems, workshops, and clarity. Glass, steel, typography, and furniture became part of one design language: useful, repeatable, and modern enough to remake daily life.",
+      "focus": "glass curtain wall, grid, workshop",
+      "side": "right",
+      "palette": [
+        "#0f1117",
+        "#e9e5d8",
+        "#e94135"
+      ]
+    },
+    {
+      "id": "fallingwater",
+      "kicker": "Room VIII",
+      "title": "The House Over the Stream",
+      "period": "1935\u20131939",
+      "place": "Pennsylvania, USA",
+      "text": "Fallingwater does not sit beside nature; it negotiates with it. Concrete planes reach over running water, stone rises from the site, and the home becomes a bridge between shelter and landscape.",
+      "focus": "cantilevered terraces, waterfall, forest",
+      "side": "bottom",
+      "palette": [
+        "#101813",
+        "#6f8a58",
+        "#d6c29a"
+      ]
+    }
+  ]
+}

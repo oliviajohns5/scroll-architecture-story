@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Memory Palace of Stone and Light</title>
+  <meta name="description" content="A scroll-driven web story about architecture, sculpture, and memory, built as a static Codex experiment." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;650;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <noscript><div class="noscript">This story works without JavaScript as a linear article, but the scroll camera needs JavaScript.</div></noscript>
+  <header class="topbar" aria-label="Story controls">
+    <a class="brand" href="#intro" aria-label="Back to intro"><span></span> Memory Palace</a>
+    <nav id="chapterNav" aria-label="Chapter navigation"></nav>
+    <div class="meter" aria-hidden="true"><i id="progressBar"></i></div>
+  </header>
+
+  <main id="app">
+    <section id="intro" class="intro chapter-panel" data-index="0">
+      <div class="intro-copy">
+        <p class="eyebrow">Scroll experiment · OpenAI/Codex built</p>
+        <h1>The Memory Palace of Stone and Light</h1>
+        <p>A fixed-stage, scroll-driven story about architecture, sculpture, and the human wish to outlast time.</p>
+        <a class="start" href="#cave">Enter the first room</a>
+      </div>
+    </section>
+
+    <section class="stage-wrap" aria-label="Scroll-driven story stage">
+      <div class="stage" id="stage">
+        <div class="backdrop" id="backdrop"></div>
+        <div class="horizon"></div>
+        <div class="scene-orbit" id="sceneOrbit" aria-hidden="true"></div>
+        <article class="chapter-card" id="chapterCard" aria-live="polite"></article>
+        <div class="chapter-count" id="chapterCount"></div>
+        <div class="reduced-note">Reduced motion: scenes are shown as static panels below.</div>
+      </div>
+    </section>
+
+    <section id="staticStory" class="static-story" aria-label="Readable static version"></section>
+  </main>
+
+  <footer class="footer">
+    <p>Built as a static scroll-story prototype. No external image assets; all scenes are generated with HTML, CSS and SVG.</p>
+    <a href="https://github.com/oliviajohns5/scroll-architecture-story">GitHub repository</a>
+  </footer>
+
+  <script src="/script.js" type="module"></script>
+</body>
+</html>
