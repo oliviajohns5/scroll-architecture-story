@@ -33,7 +33,8 @@ function renderChapter(i){
   document.documentElement.style.setProperty('--scene-a', ch.palette[0]);
   document.documentElement.style.setProperty('--scene-b', ch.palette[1]);
   document.documentElement.style.setProperty('--scene-c', ch.palette[2]);
-  orbit.innerHTML=`<div class="scene">${sceneSvg(ch,i)}</div>`;
+  const art = ch.image ? `<img class="scene-image" src="${ch.image}" alt="${ch.image_alt || ch.title}" loading="eager" onerror="this.remove(); this.nextElementSibling?.classList.remove('svg-fallback');"><div class="svg-fallback">${sceneSvg(ch,i)}</div>` : sceneSvg(ch,i);
+  orbit.innerHTML=`<div class="scene">${art}</div>`;
   card.className=`chapter-card ${ch.side}`;
   card.innerHTML=`<div class="kicker">${ch.kicker} · ${ch.period}</div><h2>${ch.title}</h2><div class="meta">${ch.place} · ${ch.focus}</div><p>${ch.text}</p>`;
   count.textContent=`${String(i+1).padStart(2,'0')} / ${String(chapters.length).padStart(2,'0')}`;
@@ -52,7 +53,11 @@ function update(){
   const idx=Math.min(chapters.length-1,Math.max(0,Math.floor(raw)));
   const cp=raw-idx;
   document.documentElement.style.setProperty('--chapter-progress', cp.toFixed(4));
-  if(idx!==active){active=idx; renderChapter(idx);}  
+  if(idx!==active){
+    active=idx; renderChapter(idx);
+    const next=chapters[idx+1];
+    if(next?.image){ const img=new Image(); img.src=next.image; }
+  }  
 }
 addEventListener('scroll',()=>requestAnimationFrame(update),{passive:true});
 addEventListener('resize',update);

@@ -1,3 +1,7 @@
 .vercel
 qa/
 vercel-deploy.log
+
+image-generation/*.log
+image-generation/*.err
+image-generation/last-run.json
