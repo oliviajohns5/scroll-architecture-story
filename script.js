@@ -33,7 +33,7 @@ function renderChapter(i){
   document.documentElement.style.setProperty('--scene-a', ch.palette[0]);
   document.documentElement.style.setProperty('--scene-b', ch.palette[1]);
   document.documentElement.style.setProperty('--scene-c', ch.palette[2]);
-  const art = ch.image ? `<img class="scene-image" src="${ch.image}" alt="${ch.image_alt || ch.title}" loading="eager" onerror="this.remove(); this.nextElementSibling?.classList.remove('svg-fallback');"><div class="svg-fallback">${sceneSvg(ch,i)}</div>` : sceneSvg(ch,i);
+  const art = ch.image ? `<img class="scene-image" src="${ch.image}" alt="${ch.image_alt || ch.title}" loading="eager" onerror="this.remove(); this.nextElementSibling?.classList.add('revealed');"><div class="svg-fallback">${sceneSvg(ch,i)}</div>` : sceneSvg(ch,i);
   orbit.innerHTML=`<div class="scene">${art}</div>`;
   card.className=`chapter-card ${ch.side}`;
   card.innerHTML=`<div class="kicker">${ch.kicker} · ${ch.period}</div><h2>${ch.title}</h2><div class="meta">${ch.place} · ${ch.focus}</div><p>${ch.text}</p>`;
