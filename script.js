@@ -9,6 +9,7 @@ const nav = document.getElementById('chapterNav');
 const staticStory = document.getElementById('staticStory');
 const progressBar = document.getElementById('progressBar');
 const chapterRail = document.getElementById('chapterRail');
+const learnPanel = document.getElementById('learnPanel');
 
 const sceneSvg = (ch, i) => {
   const [a,b,c] = ch.palette;
@@ -89,8 +90,36 @@ document.querySelector('.brand')?.addEventListener('click', (event) => {
   goToIntro();
 });
 
+card.addEventListener('click', (event) => {
+  const button = event.target.closest('.learn-toggle');
+  if(!button) return;
+  const isOpen = learnPanel.classList.toggle('open');
+  card.classList.toggle('learn-open', isOpen);
+  learnPanel.setAttribute('aria-hidden', String(!isOpen));
+  button.setAttribute('aria-expanded', String(isOpen));
+});
+
+learnPanel.addEventListener('click', (event) => {
+  if(!event.target.closest('.learn-close')) return;
+  learnPanel.classList.remove('open');
+  card.classList.remove('learn-open');
+  learnPanel.setAttribute('aria-hidden','true');
+  card.querySelector('.learn-toggle')?.setAttribute('aria-expanded','false');
+});
+
+addEventListener('keydown', (event) => {
+  if(event.key !== 'Escape') return;
+  learnPanel.classList.remove('open');
+  card.classList.remove('learn-open');
+  learnPanel.setAttribute('aria-hidden','true');
+  card.querySelector('.learn-toggle')?.setAttribute('aria-expanded','false');
+});
+
 function renderChapter(i){
   const ch=chapters[i];
+  learnPanel.classList.remove('open');
+  card.classList.remove('learn-open');
+  learnPanel.setAttribute('aria-hidden','true');
   document.documentElement.style.setProperty('--scene-a', ch.palette[0]);
   document.documentElement.style.setProperty('--scene-b', ch.palette[1]);
   document.documentElement.style.setProperty('--scene-c', ch.palette[2]);
@@ -107,7 +136,9 @@ function renderChapter(i){
     setTimeout(() => existing.remove(), 900);
   });
   card.className=`chapter-card ${ch.side} is-changing`;
-  card.innerHTML=`<div class="kicker">${ch.kicker} · ${ch.period}</div><h2>${ch.title}</h2><div class="meta">${ch.place} · ${ch.focus}</div><p>${ch.text}</p>`;
+  card.innerHTML=`<div class="kicker">${ch.kicker} · ${ch.period}</div><h2>${ch.title}</h2><div class="meta">${ch.place} · ${ch.focus}</div><p>${ch.text}</p><button class="learn-toggle" type="button" aria-expanded="false">Learn more</button>`;
+  const details=ch.learn_more || {};
+  learnPanel.innerHTML=`<button class="learn-close" type="button" aria-label="Close details">×</button><p class="kicker">Deeper note</p><h3>${ch.title}</h3><dl><dt>What to notice</dt><dd>${details.look || ''}</dd><dt>Why it mattered</dt><dd>${details.matter || ''}</dd><dt>Small detail</dt><dd>${details.detail || ''}</dd><dt>Legacy</dt><dd>${details.legacy || ''}</dd></dl>`;
   requestAnimationFrame(() => card.classList.remove('is-changing'));
   count.textContent=`${String(i+1).padStart(2,'0')} / ${String(chapters.length).padStart(2,'0')}`;
   [...nav.children].forEach((a,n)=>a.classList.toggle('active',n===i));
