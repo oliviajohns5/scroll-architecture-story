@@ -31,10 +31,18 @@
     <section class="stage-wrap" aria-label="Scroll-driven story stage">
       <div class="stage" id="stage">
         <div class="backdrop" id="backdrop"></div>
+        <div class="atmosphere" aria-hidden="true">
+          <div class="grain"></div>
+          <div class="light-beam beam-a"></div>
+          <div class="light-beam beam-b"></div>
+          <div class="dust dust-a"></div>
+          <div class="dust dust-b"></div>
+        </div>
         <div class="horizon"></div>
         <div class="scene-orbit" id="sceneOrbit" aria-hidden="true"></div>
         <article class="chapter-card" id="chapterCard" aria-live="polite"></article>
         <div class="chapter-count" id="chapterCount"></div>
+        <aside class="chapter-rail" id="chapterRail" aria-label="Chapter timeline"></aside>
         <div class="reduced-note">Reduced motion: scenes are shown as static panels below.</div>
       </div>
     </section>

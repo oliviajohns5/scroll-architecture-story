@@ -8,6 +8,7 @@ const count = document.getElementById('chapterCount');
 const nav = document.getElementById('chapterNav');
 const staticStory = document.getElementById('staticStory');
 const progressBar = document.getElementById('progressBar');
+const chapterRail = document.getElementById('chapterRail');
 
 const sceneSvg = (ch, i) => {
   const [a,b,c] = ch.palette;
@@ -30,6 +31,12 @@ chapters.forEach((ch,i)=>{
   a.dataset.chapterIndex = String(i);
   a.textContent=String(i+1).padStart(2,'0');
   nav.appendChild(a);
+  const marker=document.createElement('button');
+  marker.type='button';
+  marker.className='rail-marker';
+  marker.dataset.chapterIndex=String(i);
+  marker.innerHTML=`<span>${String(i+1).padStart(2,'0')}</span><b>${ch.title}</b>`;
+  chapterRail.appendChild(marker);
   const panel=document.createElement('section');
   panel.id=ch.id;
   panel.className='chapter-anchor chapter-panel';
@@ -66,6 +73,12 @@ nav.addEventListener('click', (event) => {
   goToChapter(Number(link.dataset.chapterIndex));
 });
 
+chapterRail.addEventListener('click', (event) => {
+  const marker = event.target.closest('.rail-marker[data-chapter-index]');
+  if(!marker) return;
+  goToChapter(Number(marker.dataset.chapterIndex));
+});
+
 document.querySelector('.start')?.addEventListener('click', (event) => {
   event.preventDefault();
   goToChapter(0);
@@ -98,6 +111,7 @@ function renderChapter(i){
   requestAnimationFrame(() => card.classList.remove('is-changing'));
   count.textContent=`${String(i+1).padStart(2,'0')} / ${String(chapters.length).padStart(2,'0')}`;
   [...nav.children].forEach((a,n)=>a.classList.toggle('active',n===i));
+  [...chapterRail.children].forEach((m,n)=>m.classList.toggle('active',n===i));
 }
 let active=-1;
 function update(){
