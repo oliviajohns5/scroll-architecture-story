@@ -82,9 +82,20 @@ function renderChapter(i){
   document.documentElement.style.setProperty('--scene-b', ch.palette[1]);
   document.documentElement.style.setProperty('--scene-c', ch.palette[2]);
   const art = ch.image ? `<img class="scene-image" src="${ch.image}" alt="${ch.image_alt || ch.title}" loading="eager" onerror="this.remove(); this.nextElementSibling?.classList.add('revealed');"><div class="svg-fallback">${sceneSvg(ch,i)}</div>` : sceneSvg(ch,i);
-  orbit.innerHTML=`<div class="scene">${art}</div>`;
-  card.className=`chapter-card ${ch.side}`;
+  const layer=document.createElement('div');
+  layer.className='scene-layer is-entering';
+  layer.dataset.chapter=ch.id;
+  layer.innerHTML=`<div class="scene">${art}</div>`;
+  orbit.appendChild(layer);
+  requestAnimationFrame(() => layer.classList.remove('is-entering'));
+  [...orbit.querySelectorAll('.scene-layer')].forEach(existing => {
+    if(existing === layer) return;
+    existing.classList.add('is-leaving');
+    setTimeout(() => existing.remove(), 900);
+  });
+  card.className=`chapter-card ${ch.side} is-changing`;
   card.innerHTML=`<div class="kicker">${ch.kicker} · ${ch.period}</div><h2>${ch.title}</h2><div class="meta">${ch.place} · ${ch.focus}</div><p>${ch.text}</p>`;
+  requestAnimationFrame(() => card.classList.remove('is-changing'));
   count.textContent=`${String(i+1).padStart(2,'0')} / ${String(chapters.length).padStart(2,'0')}`;
   [...nav.children].forEach((a,n)=>a.classList.toggle('active',n===i));
 }
@@ -107,7 +118,12 @@ function update(){
     if(next?.image){ const img=new Image(); img.src=next.image; }
   }  
 }
-addEventListener('scroll',()=>requestAnimationFrame(update),{passive:true});
+let ticking=false;
+addEventListener('scroll',()=>{
+  if(ticking) return;
+  ticking=true;
+  requestAnimationFrame(()=>{ update(); ticking=false; });
+},{passive:true});
 addEventListener('resize',update);
 renderChapter(0);
 update();
