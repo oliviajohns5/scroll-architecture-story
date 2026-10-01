@@ -164,7 +164,8 @@ function renderChapter(i){
   document.documentElement.style.setProperty('--scene-a', ch.palette[0]);
   document.documentElement.style.setProperty('--scene-b', ch.palette[1]);
   document.documentElement.style.setProperty('--scene-c', ch.palette[2]);
-  const art = ch.image ? `<img class="scene-image" src="${ch.image}" alt="${ch.image_alt || ch.title}" loading="eager" onerror="this.remove(); this.nextElementSibling?.classList.add('revealed');"><div class="svg-fallback">${sceneSvg(ch,i)}</div>` : sceneSvg(ch,i);
+  const imageMarkup = ch.mobile_image ? `<picture><source media="(max-width: 760px)" srcset="${ch.mobile_image}"><img class="scene-image" src="${ch.image}" alt="${ch.image_alt || ch.title}" loading="eager" onerror="this.closest('picture')?.remove(); document.querySelector('.svg-fallback')?.classList.add('revealed');"></picture>` : `<img class="scene-image" src="${ch.image}" alt="${ch.image_alt || ch.title}" loading="eager" onerror="this.remove(); this.nextElementSibling?.classList.add('revealed');">`;
+  const art = ch.image ? `${imageMarkup}<div class="svg-fallback">${sceneSvg(ch,i)}</div>` : sceneSvg(ch,i);
   const layer=document.createElement('div');
   layer.className='scene-layer is-entering';
   layer.dataset.chapter=ch.id;
@@ -204,6 +205,7 @@ function update(){
     active=idx; renderChapter(idx);
     const next=chapters[idx+1];
     if(next?.image){ const img=new Image(); img.src=next.image; }
+    if(next?.mobile_image){ const mobileImg=new Image(); mobileImg.src=next.mobile_image; }
   }  
 }
 let ticking=false;

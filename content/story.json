@@ -23,7 +23,8 @@
         "matter": "Cave painting shows that visual storytelling existed long before architecture became monumental. The first \u201cgallery\u201d was a protected interior space.",
         "detail": "Notice how the irregular wall becomes part of the composition: bumps and shadows make the animals feel alive.",
         "legacy": "Later temples, frescoes, museums, and immersive installations all repeat the same idea: a room can hold memory."
-      }
+      },
+      "mobile_image": "/assets/generated/cave-mobile.jpg"
     },
     {
       "id": "parthenon",
@@ -46,7 +47,8 @@
         "matter": "The Parthenon became a reference point for architectural balance, civic identity, and the classical language of columns and pediments.",
         "detail": "The structure uses subtle optical corrections: lines that look straight are often slightly curved or tilted.",
         "legacy": "Its vocabulary keeps reappearing in museums, banks, courthouses, and public buildings around the world."
-      }
+      },
+      "mobile_image": "/assets/generated/parthenon-mobile.jpg"
     },
     {
       "id": "pantheon",
@@ -69,7 +71,8 @@
         "matter": "It shows Roman engineering at its most theatrical: a building that makes structure, light, and time part of one experience.",
         "detail": "The oculus is not just a window. It turns sunlight into a moving marker across the interior.",
         "legacy": "The Pantheon influenced domes from Renaissance churches to civic monuments and modern museum spaces."
-      }
+      },
+      "mobile_image": "/assets/generated/pantheon-mobile.jpg"
     },
     {
       "id": "hagia",
@@ -92,7 +95,8 @@
         "matter": "Hagia Sophia changed what sacred architecture could feel like: not only massive, but weightless and luminous.",
         "detail": "Pendentives help transfer the dome\u2019s weight into the supporting structure below.",
         "legacy": "Its spatial drama shaped Byzantine, Ottoman, and later monumental architecture."
-      }
+      },
+      "mobile_image": "/assets/generated/hagia-mobile.jpg"
     },
     {
       "id": "david",
@@ -115,7 +119,8 @@
         "matter": "David makes psychological suspense visible. The sculpture is not only anatomy, but decision, attention, and fear before courage.",
         "detail": "The contrapposto stance makes the body feel alive: weight rests on one leg while the torso rotates.",
         "legacy": "It became one of the clearest symbols of Renaissance humanism and the power of the individual body."
-      }
+      },
+      "mobile_image": "/assets/generated/david-mobile.jpg"
     },
     {
       "id": "taj",
@@ -138,7 +143,8 @@
         "matter": "The Taj Mahal turns grief into architecture. It uses precision and light to make mourning feel ordered and almost weightless.",
         "detail": "The reflecting pool doubles the building, making symmetry part of the visitor\u2019s path.",
         "legacy": "It remains a global reference for memorial architecture, proportion, and emotional clarity."
-      }
+      },
+      "mobile_image": "/assets/generated/taj-mobile.jpg"
     },
     {
       "id": "bauhaus",
@@ -161,7 +167,8 @@
         "matter": "The Bauhaus connected art, craft, architecture, typography, and product design into one modern language.",
         "detail": "The glass curtain wall shows the building as a transparent working machine rather than a decorated shell.",
         "legacy": "Its influence is visible in modern offices, furniture, UI grids, type systems, and design education."
-      }
+      },
+      "mobile_image": "/assets/generated/bauhaus-mobile.jpg"
     },
     {
       "id": "fallingwater",
@@ -184,7 +191,8 @@
         "matter": "Fallingwater treats architecture and landscape as one system, not as separate object and background.",
         "detail": "The sound and movement of water are part of the design experience, not just scenery.",
         "legacy": "It remains a key example of organic architecture and site-specific modernism."
-      }
+      },
+      "mobile_image": "/assets/generated/fallingwater-mobile.jpg"
     }
   ]
 }
