@@ -10,6 +10,7 @@ const staticStory = document.getElementById('staticStory');
 const progressBar = document.getElementById('progressBar');
 const chapterRail = document.getElementById('chapterRail');
 const learnPanel = document.getElementById('learnPanel');
+const soundToggle = document.getElementById('soundToggle');
 
 const sceneSvg = (ch, i) => {
   const [a,b,c] = ch.palette;
@@ -25,6 +26,89 @@ const sceneSvg = (ch, i) => {
 };
 
 const stageWrap = document.querySelector('.stage-wrap');
+
+const chapterTones = [72, 98, 128, 146, 174, 196, 220, 246];
+let audioCtx = null;
+let masterGain = null;
+let toneA = null;
+let toneB = null;
+let lowpass = null;
+let noiseSource = null;
+let noiseGain = null;
+let soundEnabled = false;
+
+function createNoiseBuffer(ctx){
+  const seconds = 2;
+  const buffer = ctx.createBuffer(1, ctx.sampleRate * seconds, ctx.sampleRate);
+  const data = buffer.getChannelData(0);
+  for(let i=0;i<data.length;i++) data[i] = (Math.random() * 2 - 1) * 0.45;
+  return buffer;
+}
+
+function initAudio(){
+  if(audioCtx) return;
+  const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+  if(!AudioContextClass){
+    soundToggle.textContent = 'Sound unavailable';
+    soundToggle.disabled = true;
+    return;
+  }
+  audioCtx = new AudioContextClass();
+  masterGain = audioCtx.createGain();
+  masterGain.gain.value = 0;
+  lowpass = audioCtx.createBiquadFilter();
+  lowpass.type = 'lowpass';
+  lowpass.frequency.value = 780;
+  lowpass.Q.value = 0.5;
+  toneA = audioCtx.createOscillator();
+  toneB = audioCtx.createOscillator();
+  toneA.type = 'sine';
+  toneB.type = 'triangle';
+  toneA.frequency.value = chapterTones[0];
+  toneB.frequency.value = chapterTones[0] * 1.5;
+  const toneGain = audioCtx.createGain();
+  toneGain.gain.value = 0.18;
+  noiseSource = audioCtx.createBufferSource();
+  noiseSource.buffer = createNoiseBuffer(audioCtx);
+  noiseSource.loop = true;
+  noiseGain = audioCtx.createGain();
+  noiseGain.gain.value = 0.025;
+  toneA.connect(toneGain);
+  toneB.connect(toneGain);
+  toneGain.connect(lowpass);
+  noiseSource.connect(noiseGain);
+  noiseGain.connect(lowpass);
+  lowpass.connect(masterGain);
+  masterGain.connect(audioCtx.destination);
+  toneA.start();
+  toneB.start();
+  noiseSource.start();
+}
+
+function setSoundEnabled(enabled){
+  initAudio();
+  if(!audioCtx || !masterGain) return;
+  soundEnabled = enabled;
+  if(audioCtx.state === 'suspended') audioCtx.resume();
+  const now = audioCtx.currentTime;
+  masterGain.gain.cancelScheduledValues(now);
+  masterGain.gain.setTargetAtTime(enabled ? 0.12 : 0, now, 0.08);
+  soundToggle.textContent = enabled ? 'Mute sound' : 'Enable sound';
+  soundToggle.setAttribute('aria-pressed', String(enabled));
+  soundToggle.classList.toggle('active', enabled);
+}
+
+function updateChapterSound(index, chapterProgress=0){
+  if(!audioCtx || !toneA || !toneB || !lowpass || !noiseGain) return;
+  const base = chapterTones[index] || chapterTones[0];
+  const now = audioCtx.currentTime;
+  toneA.frequency.setTargetAtTime(base * (1 + chapterProgress * 0.018), now, 0.16);
+  toneB.frequency.setTargetAtTime(base * 1.5, now, 0.18);
+  lowpass.frequency.setTargetAtTime(620 + index * 80 + chapterProgress * 110, now, 0.18);
+  noiseGain.gain.setTargetAtTime(0.018 + (index % 3) * 0.007, now, 0.22);
+}
+
+soundToggle.addEventListener('click', () => setSoundEnabled(!soundEnabled));
 
 chapters.forEach((ch,i)=>{
   const a=document.createElement('a');
@@ -143,6 +227,7 @@ function renderChapter(i){
   count.textContent=`${String(i+1).padStart(2,'0')} / ${String(chapters.length).padStart(2,'0')}`;
   [...nav.children].forEach((a,n)=>a.classList.toggle('active',n===i));
   [...chapterRail.children].forEach((m,n)=>m.classList.toggle('active',n===i));
+  updateChapterSound(i, 0);
 }
 let active=-1;
 function update(){
@@ -157,6 +242,7 @@ function update(){
   const idx=Math.min(chapters.length-1,Math.max(0,Math.floor(raw)));
   const cp=raw-idx;
   document.documentElement.style.setProperty('--chapter-progress', cp.toFixed(4));
+  updateChapterSound(idx, cp);
   if(idx!==active){
     active=idx; renderChapter(idx);
     const next=chapters[idx+1];
