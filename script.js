@@ -7,6 +7,7 @@ const card = document.getElementById('chapterCard');
 const count = document.getElementById('chapterCount');
 const nav = document.getElementById('chapterNav');
 const staticStory = document.getElementById('staticStory');
+const galleryGrid = document.getElementById('galleryGrid');
 const progressBar = document.getElementById('progressBar');
 const chapterRail = document.getElementById('chapterRail');
 const learnPanel = document.getElementById('learnPanel');
@@ -87,6 +88,12 @@ chapters.forEach((ch,i)=>{
   panel.style.cssText='height:100svh; position:relative; pointer-events:none;';
   stageWrap.appendChild(panel);
   const staticCard=document.createElement('article'); staticCard.className='static-card'; staticCard.innerHTML=`<p class="eyebrow">${ch.kicker} · ${ch.period}</p><h2>${ch.title}</h2><p class="meta">${ch.place}</p><p>${ch.text}</p>`; staticStory.appendChild(staticCard);
+  const galleryCard=document.createElement('a');
+  galleryCard.className='gallery-card';
+  galleryCard.href=`#${ch.id}`;
+  galleryCard.dataset.chapterIndex=String(i);
+  galleryCard.innerHTML=`<picture><source media="(max-width: 760px)" srcset="${ch.mobile_image || ch.image}"><img src="${ch.image}" alt="${ch.image_alt || ch.title}" loading="lazy"></picture><div><span>${String(i+1).padStart(2,'0')} · ${ch.act_title || ch.kicker}</span><h3>${ch.title}</h3><p>${ch.focus}</p></div>`;
+  galleryGrid?.appendChild(galleryCard);
 });
 
 function chapterScrollY(index){
@@ -120,6 +127,13 @@ chapterRail.addEventListener('click', (event) => {
   const marker = event.target.closest('.rail-marker[data-chapter-index]');
   if(!marker) return;
   goToChapter(Number(marker.dataset.chapterIndex));
+});
+
+galleryGrid?.addEventListener('click', (event) => {
+  const card = event.target.closest('.gallery-card[data-chapter-index]');
+  if(!card) return;
+  event.preventDefault();
+  goToChapter(Number(card.dataset.chapterIndex));
 });
 
 document.querySelectorAll('.start').forEach((button) => {
