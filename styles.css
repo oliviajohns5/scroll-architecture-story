@@ -34,6 +34,6 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background:rad
 @media (max-width:760px){.chapter-card.learn-open{opacity:0}.learn-panel{max-height:calc(100svh - 126px)}}
 
 .sound-toggle{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:var(--ink);border-radius:999px;padding:8px 11px;font-size:12px;font-weight:850;white-space:nowrap;cursor:pointer;backdrop-filter:blur(14px)}.sound-toggle.active{background:var(--accent);color:#111;border-color:transparent}.sound-toggle:disabled{opacity:.55;cursor:not-allowed}
-@media (max-width:760px){.sound-toggle{font-size:11px;padding:7px 9px}.topbar{gap:8px}.topbar nav{max-width:96px}.brand{max-width:124px;overflow:hidden;text-overflow:ellipsis}}
+@media (max-width:760px){.sound-toggle{font-size:11px;padding:7px 9px}.topbar{gap:8px}.topbar nav{display:none}.brand{max-width:190px;overflow:hidden;text-overflow:ellipsis}}
 
 @media (max-width:1500px) and (min-width:981px){.chapter-rail{right:16px;max-width:none}.rail-marker{width:36px;height:36px;padding:0;justify-content:center}.rail-marker b{display:none}.rail-marker.active{transform:none}.chapter-card.right{right:72px}}

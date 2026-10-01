@@ -11,6 +11,7 @@ const progressBar = document.getElementById('progressBar');
 const chapterRail = document.getElementById('chapterRail');
 const learnPanel = document.getElementById('learnPanel');
 const soundToggle = document.getElementById('soundToggle');
+const ambientAudio = document.getElementById('ambientAudio');
 
 const sceneSvg = (ch, i) => {
   const [a,b,c] = ch.palette;
@@ -27,85 +28,41 @@ const sceneSvg = (ch, i) => {
 
 const stageWrap = document.querySelector('.stage-wrap');
 
-const chapterTones = [72, 98, 128, 146, 174, 196, 220, 246];
-let audioCtx = null;
-let masterGain = null;
-let toneA = null;
-let toneB = null;
-let lowpass = null;
-let noiseSource = null;
-let noiseGain = null;
 let soundEnabled = false;
-
-function createNoiseBuffer(ctx){
-  const seconds = 2;
-  const buffer = ctx.createBuffer(1, ctx.sampleRate * seconds, ctx.sampleRate);
-  const data = buffer.getChannelData(0);
-  for(let i=0;i<data.length;i++) data[i] = (Math.random() * 2 - 1) * 0.45;
-  return buffer;
+if(ambientAudio){
+  ambientAudio.volume = 0.24;
 }
 
-function initAudio(){
-  if(audioCtx) return;
-  const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-  if(!AudioContextClass){
+async function setSoundEnabled(enabled){
+  if(!ambientAudio){
     soundToggle.textContent = 'Sound unavailable';
     soundToggle.disabled = true;
     return;
   }
-  audioCtx = new AudioContextClass();
-  masterGain = audioCtx.createGain();
-  masterGain.gain.value = 0;
-  lowpass = audioCtx.createBiquadFilter();
-  lowpass.type = 'lowpass';
-  lowpass.frequency.value = 780;
-  lowpass.Q.value = 0.5;
-  toneA = audioCtx.createOscillator();
-  toneB = audioCtx.createOscillator();
-  toneA.type = 'sine';
-  toneB.type = 'triangle';
-  toneA.frequency.value = chapterTones[0];
-  toneB.frequency.value = chapterTones[0] * 1.5;
-  const toneGain = audioCtx.createGain();
-  toneGain.gain.value = 0.18;
-  noiseSource = audioCtx.createBufferSource();
-  noiseSource.buffer = createNoiseBuffer(audioCtx);
-  noiseSource.loop = true;
-  noiseGain = audioCtx.createGain();
-  noiseGain.gain.value = 0.025;
-  toneA.connect(toneGain);
-  toneB.connect(toneGain);
-  toneGain.connect(lowpass);
-  noiseSource.connect(noiseGain);
-  noiseGain.connect(lowpass);
-  lowpass.connect(masterGain);
-  masterGain.connect(audioCtx.destination);
-  toneA.start();
-  toneB.start();
-  noiseSource.start();
-}
-
-function setSoundEnabled(enabled){
-  initAudio();
-  if(!audioCtx || !masterGain) return;
   soundEnabled = enabled;
-  if(audioCtx.state === 'suspended') audioCtx.resume();
-  const now = audioCtx.currentTime;
-  masterGain.gain.cancelScheduledValues(now);
-  masterGain.gain.setTargetAtTime(enabled ? 0.12 : 0, now, 0.08);
-  soundToggle.textContent = enabled ? 'Mute sound' : 'Enable sound';
-  soundToggle.setAttribute('aria-pressed', String(enabled));
-  soundToggle.classList.toggle('active', enabled);
+  try{
+    if(enabled){
+      ambientAudio.volume = 0.24;
+      await ambientAudio.play();
+    } else {
+      ambientAudio.pause();
+    }
+    soundToggle.textContent = enabled ? 'Mute sound' : 'Enable sound';
+    soundToggle.setAttribute('aria-pressed', String(enabled));
+    soundToggle.classList.toggle('active', enabled);
+  } catch(error){
+    soundEnabled = false;
+    soundToggle.textContent = 'Sound blocked';
+    soundToggle.setAttribute('aria-pressed','false');
+    soundToggle.classList.remove('active');
+  }
 }
 
 function updateChapterSound(index, chapterProgress=0){
-  if(!audioCtx || !toneA || !toneB || !lowpass || !noiseGain) return;
-  const base = chapterTones[index] || chapterTones[0];
-  const now = audioCtx.currentTime;
-  toneA.frequency.setTargetAtTime(base * (1 + chapterProgress * 0.018), now, 0.16);
-  toneB.frequency.setTargetAtTime(base * 1.5, now, 0.18);
-  lowpass.frequency.setTargetAtTime(620 + index * 80 + chapterProgress * 110, now, 0.18);
-  noiseGain.gain.setTargetAtTime(0.018 + (index % 3) * 0.007, now, 0.22);
+  if(!ambientAudio || !soundEnabled) return;
+  // Keep it quiet and stable: only a tiny volume breathing by chapter/scroll.
+  const target = 0.20 + ((index % 3) * 0.015) + chapterProgress * 0.012;
+  ambientAudio.volume = Math.max(0.16, Math.min(0.28, target));
 }
 
 soundToggle.addEventListener('click', () => setSoundEnabled(!soundEnabled));

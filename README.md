@@ -34,3 +34,8 @@ OPENROUTER_API_KEY=... python3 scripts/generate_openrouter_images.py --fallbacks
 ```
 
 The site uses generated images when files exist and keeps the SVG scenes as fallback.
+
+
+## Original ambient soundtrack
+
+`assets/audio/memory-palace-ambient.mp3` is an original, procedurally composed instrumental loop generated for this prototype. It contains no vocals and no sampled third-party recordings. Use it as license-free project music for this site.
