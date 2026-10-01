@@ -134,6 +134,13 @@ document.querySelector('.brand')?.addEventListener('click', (event) => {
   goToIntro();
 });
 
+document.querySelectorAll('a[href="#intro"]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    goToIntro();
+  });
+});
+
 card.addEventListener('click', (event) => {
   const button = event.target.closest('.learn-toggle');
   if(!button) return;
