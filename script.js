@@ -121,9 +121,11 @@ chapterRail.addEventListener('click', (event) => {
   goToChapter(Number(marker.dataset.chapterIndex));
 });
 
-document.querySelector('.start')?.addEventListener('click', (event) => {
-  event.preventDefault();
-  goToChapter(0);
+document.querySelectorAll('.start').forEach((button) => {
+  button.addEventListener('click', (event) => {
+    event.preventDefault();
+    goToChapter(0);
+  });
 });
 
 document.querySelector('.brand')?.addEventListener('click', (event) => {
