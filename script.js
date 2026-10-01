@@ -204,7 +204,7 @@ function renderChapter(i){
   card.className=`chapter-card ${ch.side} is-changing`;
   card.innerHTML=`<div class="act-label"><span>${ch.act || ''}</span><b>${ch.act_title || ''}</b></div><div class="kicker">${ch.kicker} · ${ch.period}</div><h2>${ch.title}</h2><div class="meta">${ch.place} · ${ch.focus}</div><p>${ch.text}</p><p class="transition-line">${ch.transition || ''}</p><button class="learn-toggle" type="button" aria-expanded="false">Learn more</button>`;
   const details=ch.learn_more || {};
-  learnPanel.innerHTML=`<button class="learn-close" type="button" aria-label="Close details">×</button><p class="kicker">Deeper note</p><h3>${ch.title}</h3><dl><dt>What to notice</dt><dd>${details.look || ''}</dd><dt>Why it mattered</dt><dd>${details.matter || ''}</dd><dt>Small detail</dt><dd>${details.detail || ''}</dd><dt>Legacy</dt><dd>${details.legacy || ''}</dd></dl>`;
+  learnPanel.innerHTML=`<button class="learn-close" type="button" aria-label="Close details">×</button><p class="kicker">Deeper note</p><h3>${ch.title}</h3><p class="learn-summary">${details.summary || ''}</p><dl><dt>What to notice</dt><dd>${details.look || ''}</dd><dt>Why it mattered</dt><dd>${details.matter || ''}</dd><dt>Material</dt><dd>${details.material || ''}</dd><dt>Human idea</dt><dd>${details.human_idea || ''}</dd><dt>Small detail</dt><dd>${details.detail || ''}</dd><dt>Modern echo</dt><dd>${details.modern_echo || ''}</dd><dt>Legacy</dt><dd>${details.legacy || ''}</dd></dl>`;
   requestAnimationFrame(() => card.classList.remove('is-changing'));
   count.textContent=`${String(i+1).padStart(2,'0')} / ${String(chapters.length).padStart(2,'0')}`;
   [...nav.children].forEach((a,n)=>a.classList.toggle('active',n===i));

@@ -22,7 +22,11 @@
         "look": "Mineral pigments turn rough limestone into a moving surface; the animals seem to emerge from the cave wall rather than sit on top of it.",
         "matter": "Cave painting shows that visual storytelling existed long before architecture became monumental. The first \u201cgallery\u201d was a protected interior space.",
         "detail": "Notice how the irregular wall becomes part of the composition: bumps and shadows make the animals feel alive.",
-        "legacy": "Later temples, frescoes, museums, and immersive installations all repeat the same idea: a room can hold memory."
+        "legacy": "Later temples, frescoes, museums, and immersive installations all repeat the same idea: a room can hold memory.",
+        "summary": "A wall becomes a memory device before writing exists.",
+        "material": "Pigment, mineral color, charcoal, animal fat, and the uneven cave surface itself.",
+        "human_idea": "Memory begins by externalizing attention: what matters is placed where others can return to it.",
+        "modern_echo": "Immersive rooms, projection mapping, museums, and even social feeds repeat the impulse to surround people with images that say: remember this."
       },
       "mobile_image": "/assets/generated/cave-mobile.jpg",
       "act": "Act I",
@@ -49,7 +53,11 @@
         "look": "A marble temple built with Doric order, sculpted friezes, and carefully tuned proportions.",
         "matter": "The Parthenon became a reference point for architectural balance, civic identity, and the classical language of columns and pediments.",
         "detail": "The structure uses subtle optical corrections: lines that look straight are often slightly curved or tilted.",
-        "legacy": "Its vocabulary keeps reappearing in museums, banks, courthouses, and public buildings around the world."
+        "legacy": "Its vocabulary keeps reappearing in museums, banks, courthouses, and public buildings around the world.",
+        "summary": "A city turns political identity into measured stone.",
+        "material": "Pentelic marble, column rhythms, sculptural friezes, and optical refinements.",
+        "human_idea": "Order can become a public language: proportion tells citizens what a culture values.",
+        "modern_echo": "Civic buildings, museums, banks, and courts still borrow classical rhythm when they want authority to feel permanent."
       },
       "mobile_image": "/assets/generated/parthenon-mobile.jpg",
       "act": "Act I",
@@ -76,7 +84,11 @@
         "look": "A circular Roman interior covered by a huge coffered concrete dome and opened by a central oculus.",
         "matter": "It shows Roman engineering at its most theatrical: a building that makes structure, light, and time part of one experience.",
         "detail": "The oculus is not just a window. It turns sunlight into a moving marker across the interior.",
-        "legacy": "The Pantheon influenced domes from Renaissance churches to civic monuments and modern museum spaces."
+        "legacy": "The Pantheon influenced domes from Renaissance churches to civic monuments and modern museum spaces.",
+        "summary": "A dome turns light into a moving instrument of time.",
+        "material": "Roman concrete, brick, marble, coffers, and an open oculus.",
+        "human_idea": "A building can make the invisible visible by giving light, weather, and time a precise path.",
+        "modern_echo": "Planetariums, memorial domes, airports, and museum rotundas keep using circular space to make visitors feel placed inside a larger order."
       },
       "mobile_image": "/assets/generated/pantheon-mobile.jpg",
       "act": "Act II",
@@ -103,7 +115,11 @@
         "look": "A vast central dome appears to float above a ring of windows, mosaics, and layered arches.",
         "matter": "Hagia Sophia changed what sacred architecture could feel like: not only massive, but weightless and luminous.",
         "detail": "Pendentives help transfer the dome\u2019s weight into the supporting structure below.",
-        "legacy": "Its spatial drama shaped Byzantine, Ottoman, and later monumental architecture."
+        "legacy": "Its spatial drama shaped Byzantine, Ottoman, and later monumental architecture.",
+        "summary": "Engineering becomes atmosphere: mass is made to feel weightless.",
+        "material": "Brick, mortar, marble revetment, mosaics, windows, pendentives, and a hovering dome.",
+        "human_idea": "Technique matters most when it disappears into wonder; structure can become emotion.",
+        "modern_echo": "Concert halls, sacred spaces, and immersive installations still chase the same effect: technical complexity that feels like air."
       },
       "mobile_image": "/assets/generated/hagia-mobile.jpg",
       "act": "Act II",
@@ -130,7 +146,11 @@
         "look": "A marble figure caught before action, with a tense gaze, turned body, and enlarged hand.",
         "matter": "David makes psychological suspense visible. The sculpture is not only anatomy, but decision, attention, and fear before courage.",
         "detail": "The contrapposto stance makes the body feel alive: weight rests on one leg while the torso rotates.",
-        "legacy": "It became one of the clearest symbols of Renaissance humanism and the power of the individual body."
+        "legacy": "It became one of the clearest symbols of Renaissance humanism and the power of the individual body.",
+        "summary": "A single body becomes a monument to human decision.",
+        "material": "Carrara marble carved into tension, anatomy, gaze, and contrapposto.",
+        "human_idea": "The human figure can carry civic courage, fear, intelligence, and readiness at once.",
+        "modern_echo": "Hero images, sports photography, film posters, and public statues still use the poised body to suggest agency before action."
       },
       "mobile_image": "/assets/generated/david-mobile.jpg",
       "act": "Act II",
@@ -157,7 +177,11 @@
         "look": "White marble, garden geometry, reflection, calligraphy, and balanced symmetry form one calm composition.",
         "matter": "The Taj Mahal turns grief into architecture. It uses precision and light to make mourning feel ordered and almost weightless.",
         "detail": "The reflecting pool doubles the building, making symmetry part of the visitor\u2019s path.",
-        "legacy": "It remains a global reference for memorial architecture, proportion, and emotional clarity."
+        "legacy": "It remains a global reference for memorial architecture, proportion, and emotional clarity.",
+        "summary": "Private grief becomes public symmetry.",
+        "material": "White marble, pietra dura inlay, red sandstone, garden geometry, water, and reflected light.",
+        "human_idea": "When emotion is too large for ordinary language, humans make form precise enough to hold it.",
+        "modern_echo": "Memorials, cemeteries, remembrance gardens, and minimalist monuments still use symmetry and silence to give grief a place."
       },
       "mobile_image": "/assets/generated/taj-mobile.jpg",
       "act": "Act III",
@@ -184,7 +208,11 @@
         "look": "Glass, steel, grids, flat planes, and workshop logic replace ornament with a system.",
         "matter": "The Bauhaus connected art, craft, architecture, typography, and product design into one modern language.",
         "detail": "The glass curtain wall shows the building as a transparent working machine rather than a decorated shell.",
-        "legacy": "Its influence is visible in modern offices, furniture, UI grids, type systems, and design education."
+        "legacy": "Its influence is visible in modern offices, furniture, UI grids, type systems, and design education.",
+        "summary": "Memory shifts from monument to method.",
+        "material": "Glass curtain walls, steel, concrete, workshops, grids, typography, furniture, and repeatable systems.",
+        "human_idea": "Culture can be preserved not only in objects, but in rules that teach people how to make better objects.",
+        "modern_echo": "Product design, interface grids, design systems, startup branding, and architecture schools still inherit the Bauhaus idea that form should reveal purpose."
       },
       "mobile_image": "/assets/generated/bauhaus-mobile.jpg",
       "act": "Act III",
@@ -211,7 +239,11 @@
         "look": "Horizontal concrete terraces project above a waterfall, while local stone anchors the house into the site.",
         "matter": "Fallingwater treats architecture and landscape as one system, not as separate object and background.",
         "detail": "The sound and movement of water are part of the design experience, not just scenery.",
-        "legacy": "It remains a key example of organic architecture and site-specific modernism."
+        "legacy": "It remains a key example of organic architecture and site-specific modernism.",
+        "summary": "A house stops dominating nature and becomes part of the site.",
+        "material": "Reinforced concrete terraces, local stone, glass, steel, forest, water, and sound.",
+        "human_idea": "Memory can be ecological: a place is not a backdrop but an active collaborator in design.",
+        "modern_echo": "Biophilic design, site-specific houses, eco-resorts, and landscape architecture still ask how buildings can belong instead of merely occupy."
       },
       "mobile_image": "/assets/generated/fallingwater-mobile.jpg",
       "act": "Act III",
